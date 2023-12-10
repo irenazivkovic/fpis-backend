@@ -179,7 +179,7 @@ export class NarudzbenicaService {
       );
 
       const stavkeEntities = this.stavkeNarudzbeniceRepo.mapToEntity(
-        narudzbenicaID.raw.insertId,
+        narudzbenica.narudzbenicaID,
         narudzbenica.stavke,
       );
 
@@ -231,13 +231,14 @@ export class NarudzbenicaService {
         );
 
         const stavkeEntities = this.stavkeNarudzbeniceRepo.mapToEntity(
-          narudzbenicaID.raw.insertId,
+          narudzbenica.narudzbenicaID,
           narudzbenica.stavke,
         );
 
         await manager.save(StavkaNarudzbeniceEntity, stavkeEntities);
       });
     } catch (error) {
+      console.log(error);
       throw new BadRequestException(error);
     }
   }

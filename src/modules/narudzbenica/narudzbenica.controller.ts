@@ -5,6 +5,7 @@ import {
   Get,
   Param,
   Post,
+  Put,
   Query,
   Res,
 } from '@nestjs/common';
@@ -54,6 +55,17 @@ export class NarudzbenicaController {
       await this.service.delete(id);
 
       res.json({ status: 200, message: 'Narudžbenica je obrisana' });
+    } catch (error) {
+      res.json({ status: error.status, message: error.message });
+    }
+  }
+
+  @Put()
+  public async update(@Body() narudzbenica: NarudbenicaFullDto, @Res() res) {
+    try {
+      await this.service.update(narudzbenica);
+
+      res.json({ status: 200, message: 'Dobavljač je izmenjen' });
     } catch (error) {
       res.json({ status: error.status, message: error.message });
     }
