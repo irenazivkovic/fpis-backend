@@ -6,12 +6,10 @@ import {
   Param,
   Post,
   Put,
-  Query,
   Res,
 } from '@nestjs/common';
 import { DobavljacDto } from './dto/dobavljac.dto';
 import { DobavljacService } from './dobavljac.service';
-import { async } from 'rxjs';
 
 @Controller('/dobavljac')
 export class DobavljacController {

@@ -1,9 +1,14 @@
 import { Module } from '@nestjs/common';
 import { ConfigModule } from '@nestjs/config';
 import { TypeOrmModule } from '@nestjs/typeorm';
-import { MestoModule } from './modules/mesto/mesto.module';
 import { AdresaModule } from './modules/adresa/adresa.module';
 import { DobavljacModule } from './modules/dobavljac/dobavljac.module';
+import { ZaposlenModule } from './modules/zaposlen/zaposlen.module';
+import { KatalogModule } from './modules/katalog/katalog.module';
+import { MestoModule } from './modules/mesto/mesto.module';
+import { ArtikalModule } from './modules/artikal/artikal.module';
+import { NarudzbenicaModule } from './modules/narudzbenica/narudzbenica.module';
+import { StavkaNarudzbeniceModule } from './modules/stavka-narudzbenice/stavka-narudzbenice.module';
 
 @Module({
   imports: [
@@ -20,6 +25,11 @@ import { DobavljacModule } from './modules/dobavljac/dobavljac.module';
     MestoModule,
     AdresaModule,
     DobavljacModule,
+    ZaposlenModule,
+    KatalogModule,
+    ArtikalModule,
+    NarudzbenicaModule,
+    StavkaNarudzbeniceModule,
   ],
   controllers: [],
   providers: [],
